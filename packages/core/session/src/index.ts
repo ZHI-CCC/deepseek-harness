@@ -335,8 +335,7 @@ function assertMessageEventShape(event: Record<string, unknown>, subject: string
   }
   if (type !== 'tool/result') return
   if (sourceRecord['kind'] !== 'tool'
-    || typeof sourceRecord['callId'] !== 'string'
-    || sourceRecord['callId'] === '') {
+    || typeof sourceRecord['callId'] !== 'string') {
     throw new Error(`${subject} message must have tool source`)
   }
   const content = messageRecord['content'] as unknown[]
